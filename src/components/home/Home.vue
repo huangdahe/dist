@@ -1,13 +1,12 @@
 <template>
   <div>
-     <h3><router-link to="/home">扫一扫得红包</router-link></h3>
-     <img src="../assets/20180624221632.png">
+     <h3>首页呀！</h3>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'HelloWorld',
+  name: 'home',
   data () {
     return {
     }

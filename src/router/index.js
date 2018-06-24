@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import HelloWorld from '@/components/HelloWorld'
-
+import home from '@/components/home/Home'
 Vue.use(Router)
 const router = new Router({
   routes: [
@@ -11,6 +11,12 @@ const router = new Router({
       component: HelloWorld,
       meta: { title: '黄大河的网站' }
 
+    },
+     {
+      path: '/home',
+      name: 'home',
+      component: home,//懒加载,
+      meta: { title: '首页' }
     }
   ]
 })
