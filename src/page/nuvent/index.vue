@@ -51,23 +51,24 @@
         </el-col>
       </el-row> 
     </el-form>
-    <div class="tab">
-      <div  class="Event-Details" :class='{active:flowInfo.tabView==1}' @click="tabChange(1)">活动详情</div>
-      <div  class="Registration-gift" :class='{active:flowInfo.tabView==2}' @click="tabChange(2)">产品介绍</div>
-    </div>
-    
-    <div v-if="flowInfo.tabView==2" style='margin-bottom: 60px;'>
-      <el-collapse v-model="activeNames" accordion>
-       <!--  <el-collapse-item title="通体大理石瓷砖" name="1" v-if="flowInfo.tabView==20">
-        </el-collapse-item>
-        <el-collapse-item title="通体大板600*1200" name="2" v-if="flowInfo.tabView==20">
-        </el-collapse-item>
-        <el-collapse-item title="现代仿古砖" name="3" v-if="flowInfo.tabView==20">
-        </el-collapse-item>  -->
-        <el-collapse-item title="大理石瓷砖系列" name="4">
-            <first></first>
-        </el-collapse-item>
-      </el-collapse>
+    <div  style='margin-bottom: 60px;'>
+      <div class="tab">
+        <div  class="Event-Details" :class='{active:flowInfo.tabView==1}' @click="tabChange(1)">活动详情</div>
+        <div  class="Registration-gift" :class='{active:flowInfo.tabView==2}' @click="tabChange(2)">产品介绍</div>
+      </div>
+      <div v-if="flowInfo.tabView==2" >
+        <el-collapse v-model="activeNames" accordion>
+        <!--  <el-collapse-item title="通体大理石瓷砖" name="1" v-if="flowInfo.tabView==20">
+          </el-collapse-item>
+          <el-collapse-item title="通体大板600*1200" name="2" v-if="flowInfo.tabView==20">
+          </el-collapse-item>
+          <el-collapse-item title="现代仿古砖" name="3" v-if="flowInfo.tabView==20">
+          </el-collapse-item>  -->
+          <el-collapse-item title="大理石瓷砖系列" name="4">
+              <first></first>
+          </el-collapse-item>
+        </el-collapse>
+      </div>
     </div>
     
     <el-row>
@@ -88,10 +89,10 @@ export default {
       activeNames:['4'],
       flowInfo:{
         list:[
-          {
+          /* {
             id:1,
             url:'./static/image/nuvent/1.jpg'
-          },
+          }, */
           {
             id:2,
             url:'./static/image/nuvent/2.jpg'
@@ -139,9 +140,7 @@ export default {
       },
       tabChange:function(tab){
         this.flowInfo.tabView = tab;
-        console.log("这是"+this.flowInfo.tabView);
       }
-      
   },
   components:{
     first:resolve => require(['@/page/nuvent/first'],resolve),
