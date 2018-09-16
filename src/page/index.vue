@@ -1,7 +1,7 @@
 <template>
   <div>
      <div class="block">
-      <el-carousel height="150px">
+      <el-carousel height="150px" arrow="always">
         <el-carousel-item v-for="(item,index) in flowInfo.list" :key="index">
           <img class='banner' v-bind:src="item.url">
         </el-carousel-item>
@@ -157,7 +157,7 @@ export default {
   }
 }
 .zone-product-list{
-  border:1px solid #dadcdb;
+  border:1px solid #f0f0f0;
   .product-list-img{
     img{
       width: 100%;
