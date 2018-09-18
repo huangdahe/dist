@@ -5,13 +5,13 @@
         <div class="prod-ct">
           <ul class="plistTo">
                 <li>
-                  <a title="600*900系列">
+                  <a title="600*900系列" href='http://www.newfindtc.com/m/?p=217'>
                     <div class="img" style="background-image:url(./static/image/nuvent/600x900.jpg);"></div>
                     <div class="tt">600*900系列</div>
                   </a>
                 </li>
                 <li>
-                  <a title="800*800系列">
+                  <a title="800*800系列" href='http://www.newfindtc.com/m/?p=216'>
                     <div class="img" style="background-image:url(./static/image/nuvent/800x800.jpg);"></div>
                     <div class="tt">800*800系列</div>
                   </a>
