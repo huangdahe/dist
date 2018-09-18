@@ -34,9 +34,15 @@
         <el-col :span='24'>
           <div class="msg">
             <div>活动时间：<span>2018年08月24日-09月24日</span></div>
-            <div>
-              <div style="float:left;">联系电话：<span><a href="tel:13972791591">13972791591</a></span></div>
+            <!-- <div>
+              <div style="float:left;">联系电话：<span><a href="tel:13972791591">13972791591   黄先生</a></span></div>
               <div style="float:right;"><span><i class="el-icon-arrow-right"></i></span></div>
+            </div> -->
+            <div>
+              <a href="tel:13972791591" class="call-huang">
+                <span style="float:left;">联系电话：13972791591   黄先生</span>
+                <span style="float:right;"><i class="el-icon-arrow-right"></i></span>
+                </a>
             </div>
             <div>活动地址：<span>湖北省大冶市罗家桥中亿万美吉特瓷砖区纽芬特大理石瓷砖</span></div>
           </div>
@@ -56,7 +62,19 @@
         <div  class="Event-Details" :class='{active:flowInfo.tabView==1}' @click="tabChange(1)">活动详情</div>
         <div  class="Registration-gift" :class='{active:flowInfo.tabView==2}' @click="tabChange(2)">产品介绍</div>
       </div>
-      <div v-if="flowInfo.tabView==2" >
+      <div class='event-Details' v-if="flowInfo.tabView==1">
+        <div id="test"><h3>情浓金秋，放价约惠</h3></div>
+        <div>活动政策</div>
+        <div>1>厂价直供。正宗专业大理石瓷砖。5个款式，一户家装无论你装修什么风格，都能如你所愿，<span style='color:red;'>特价68元/片</span>《规格800x800,600-900》</div>
+        <div>2>放价活动时间,纽芬特大理石瓷砖<span style='color:red;'>全场3折</span>《特价除外》</div>
+        <div>3>客户下单全屋购买纽芬特大理石瓷砖。可享受活动价和总价再优惠<span style='color:red;'>5%</span>《特价除外》</div>
+        <div>4>报团价，折上折，3户以上同时购买纽芬特大理石瓷砖，可享受折扣总价再优惠<span style='color:red;'>8%</span>《特价除外》</div>
+        <div>5>活动期间：<br>下单定金<span style='color:red;'>满5000元</span>《送纽芬特专供保温杯一个》<br>下单定金<span style='color:red;'>满1000元</span>《送羽丝绒枕一对，专供保温杯一个》</div>
+        <div>6>活动期间，妆发指定微信朋友圈点赞数满99个，送礼品纽芬特专供雨伞1把或纽芬特广告衫1件</div>
+        <div>7>开业尊享贴心服务，<span style='color:red;'>免费测量，免费瓷砖设计，免费送货上楼</span>等全方位服务</div>
+        <div>8>活动最终解释权归纽芬特大理石瓷砖店所有</div>
+      </div>
+      <div v-if="flowInfo.tabView==2">
         <el-collapse v-model="activeNames" accordion>
         <!--  <el-collapse-item title="通体大理石瓷砖" name="1" v-if="flowInfo.tabView==20">
           </el-collapse-item>
@@ -230,7 +248,7 @@ export default {
 .call1-iphone {
     text-align: center;
     width: 80%;
-    background: rgb(132, 226, 11);
+    
     height: 32px;
     line-height: 32px;
     border-radius: 8px;
@@ -238,6 +256,17 @@ export default {
     font-size: 16px;
     a{
       color: white;
+      display: block;
+      border-radius: 8px;
+      background: rgb(132, 226, 11);
     }
 }
+.event-Details {
+    margin: 0 12px;
+    div{
+      color: gray;
+    }
+}
+#test{animation:change 10s linear 0s infinite;font-size:18px;font-weight:600;text-align: center;}
+@keyframes change{0%   {color:gray;}25%{color:#ff0;}50%{color:#f60;}75%{color:#cf0;}100% {color:#f00;}}
 </style>
