@@ -8,7 +8,7 @@
       </el-carousel>
     </div>
     <el-form class='form' :inline="true">
-      <div class='title'>9月24日湖北【情浓金秋·放价约惠】纽芬特省级联动</div>
+      <div class='title'>10月24日湖北【情浓金秋·放价约惠】纽芬特省级联动</div>
       <el-row>
         <el-col :span='24'>
           <el-form-item label="热门指数">
