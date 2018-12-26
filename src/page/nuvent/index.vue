@@ -15,7 +15,7 @@
             <el-rate v-model="flowInfo.Star" :disabled='true' :colors="['red', 'red', 'red']"></el-rate>
           </el-form-item>
           <el-form-item label="" style="float: right;">
-            <i class="el-icon-view"></i><span style='color: #333;'>7000</span>人已浏览
+            <i class="el-icon-view"></i><span style='color: #333;'>7001</span>人已浏览
           </el-form-item>
         </el-col>
       </el-row>
