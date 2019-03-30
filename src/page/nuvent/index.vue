@@ -34,10 +34,6 @@
         <el-col :span='24'>
           <div class="msg">
             <div>活动时间：<span>2018年08月24日-09月24日</span></div>
-            <!-- <div>
-              <div style="float:left;">联系电话：<span><a href="tel:13972791591">13972791591   黄先生</a></span></div>
-              <div style="float:right;"><span><i class="el-icon-arrow-right"></i></span></div>
-            </div> -->
             <div>
               <a href="tel:13972791591" class="call-huang">
                 <span style="float:left;">联系电话：13972791591   黄先生</span>
@@ -76,12 +72,6 @@
       </div>
       <div v-if="flowInfo.tabView==2">
         <el-collapse v-model="activeNames" accordion>
-        <!--  <el-collapse-item title="通体大理石瓷砖" name="1" v-if="flowInfo.tabView==20">
-          </el-collapse-item>
-          <el-collapse-item title="通体大板600*1200" name="2" v-if="flowInfo.tabView==20">
-          </el-collapse-item>
-          <el-collapse-item title="现代仿古砖" name="3" v-if="flowInfo.tabView==20">
-          </el-collapse-item>  -->
           <el-collapse-item title="大理石瓷砖系列" name="4">
               <first></first>
           </el-collapse-item>
@@ -107,10 +97,10 @@ export default {
       activeNames:['4'],
       flowInfo:{
         list:[
-          /* {
+          {
             id:1,
             url:'./static/image/nuvent/1.jpg'
-          }, */
+          },
           {
             id:2,
             url:'./static/image/nuvent/2.jpg'
@@ -130,9 +120,30 @@ export default {
     }
   },
   mounted:function(){
-      _ordertimer = setInterval(()=>{this.leftTimer(new Date('2018-9-25 00:00:00'))}, 1000);
+    //初始化倒计时
+      _ordertimer = setInterval(()=>{
+        this.leftTimer(this.GetDateStr(2));
+      }, 1000);
   },
   methods:{
+      GetDateStr:function(AddDayCount) { 
+        var dd = new Date();
+        dd.setDate(dd.getDate()+AddDayCount);//获取AddDayCount天后的日期
+        var y = dd.getFullYear(); 
+        var m = (dd.getMonth()+1)<10?"0"+(dd.getMonth()+1):(dd.getMonth()+1);//获取当前月份的日期，不足10补0
+        var d = dd.getDate()<10?"0"+dd.getDate():dd.getDate();//获取当前几号，不足10补0
+        return y+"-"+m+"-"+d; 
+        console.log("半年前："+GetDateStr(-180));
+        console.log("三月前："+GetDateStr(-90));
+        console.log("一月前："+GetDateStr(-30));
+        console.log("昨天："+GetDateStr(-1));
+        console.log("今天："+GetDateStr(0));
+        console.log("明天："+GetDateStr(1));
+        console.log("后天："+GetDateStr(2));
+        console.log("一月后："+GetDateStr(30));
+        console.log("三月后："+GetDateStr(90));
+        console.log("半年后："+GetDateStr(180));
+      },
        // 倒计时
       leftTimer:function(enddate) {
         let leftTime = (new Date(enddate)) - new Date(); //计算剩余的毫秒数
